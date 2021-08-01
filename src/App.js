@@ -8,40 +8,45 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
         <div className="count">{number}</div>
         <div className="action">
-          <Button
-            variant="success"
-            className="CounterButtons"
-            size="lg"
-            onClick={() => setNumber((number) => number + 1)}
-            style={{ fontSize: 40 }}
-          >
-            +
-          </Button>
-          <Button
-            variant="warning"
-            className="CounterButtons"
-            size="lg"
-            onClick={() => setNumber(0)}
-          >
-            <RotateLeftIcon className="reset" style={{ fontSize: 40 }} />
-          </Button>
-          <Button
-            variant="danger"
-            className="CounterButtons"
-            size="lg"
-            style={{ fontSize: 40 }}
-            onClick={() =>
-              setNumber((number) => {
-                if (number > 0) return number - 1;
-                else return number;
-              })
-            }
-          >
-            -
-          </Button>
+          <div>
+            <Button
+              variant="success"
+              className="CounterButtons"
+              size="lg"
+              onClick={() => setNumber((number) => number + 1)}
+              style={{ fontSize: 40 }}
+            >
+              +
+            </Button>
+          </div>
+          <div>
+            <Button
+              variant="warning"
+              className="CounterButtons"
+              size="lg"
+              onClick={() => setNumber(0)}
+            >
+              <RotateLeftIcon className="reset" style={{ fontSize: 40 }} />
+            </Button>
+          </div>
+          <div>
+            <Button
+              variant="danger"
+              className="CounterButtons"
+              size="lg"
+              style={{ fontSize: 40 }}
+              onClick={() =>
+                setNumber((number) => {
+                  if (number > 0) return number - 1;
+                  else return number;
+                })
+              }
+            >
+              -
+            </Button>
+          </div>
         </div>
       </header>
     </div>
