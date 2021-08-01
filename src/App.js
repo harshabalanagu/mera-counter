@@ -1,22 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import { Button, Container, Navbar } from "react-bootstrap";
+import RotateLeftIcon from "@material-ui/icons/RotateLeft";
 function App() {
+  const [number, setNumber] = useState(0);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        <div className="count">{number}</div>
+        <div className="action">
+          <Button
+            variant="success"
+            className="CounterButtons"
+            size="lg"
+            onClick={() => setNumber((number) => number + 1)}
+            style={{ fontSize: 40 }}
+          >
+            +
+          </Button>
+          <Button
+            variant="warning"
+            className="CounterButtons"
+            size="lg"
+            onClick={() => setNumber(0)}
+          >
+            <RotateLeftIcon className="reset" style={{ fontSize: 40 }} />
+          </Button>
+          <Button
+            variant="danger"
+            className="CounterButtons"
+            size="lg"
+            style={{ fontSize: 40 }}
+            onClick={() =>
+              setNumber((number) => {
+                if (number > 0) return number - 1;
+                else return number;
+              })
+            }
+          >
+            -
+          </Button>
+        </div>
       </header>
     </div>
   );
